@@ -78,7 +78,7 @@ app.post("/api/chat", async (req, res) => {
     const { message } = req.body;
     if (!message) return res.status(400).json({ reply: "Message required" });
 
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
     const result = await model.generateContent(message);
 
     res.json({ reply: result.response.text() });
@@ -106,7 +106,7 @@ app.post("/api/analyze-pdf", upload.single("file"), async (req, res) => {
 PDF content:
 ${text}`;
 
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
     const result = await model.generateContent(prompt);
 
     res.json({ reply: result.response.text() });
@@ -121,7 +121,7 @@ app.post("/api/analyze-image", upload.single("file"), async (req, res) => {
   try {
     if (!req.file) return res.status(400).json({ reply: "Image file required" });
 
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
     const result = await model.generateContent({
       contents: [
