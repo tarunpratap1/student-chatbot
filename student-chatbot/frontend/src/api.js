@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'https://student-chatbot-2-4m28.onrender.com',
+  baseURL: 'https://student-chatbot-2-4m28.onrender.com/api',
 });
 
 export const setToken = (token) => {
