@@ -427,7 +427,7 @@ export default function Chat() {
 
     try {
       const res = await axios.post(
-        "http://localhost:4000/api/analyze-pdf",
+        "https://student-chatbot-2-4m28.onrender.com/api/analyze-pdf",
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
